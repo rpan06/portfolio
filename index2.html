@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Denis Samardjiev" />
+	<meta name="description" content="Particles - Personal + Agency Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Rachel Pan Portfolio</title>
+
+	<!-- Royal Preloader CSS -->
+	<link href="css/royal_preloader.css" rel="stylesheet">
+
+	<!-- jQuery Files -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<!-- Parallax File -->
+	<script type="text/javascript" src="js/parallax.min.js"></script>
+
+	<!-- Royal Preloader -->
+	<script type="text/javascript" src="js/royal_preloader.min.js"></script>
+	<script type="text/javascript">
+		Royal_Preloader.config({
+		    mode:           'number',
+		    showProgress:   false,
+		    background:     '#1d1d1d'
+		});
+	</script>
+
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/ionicons.min.css" rel="stylesheet">
+	<link href="css/pe-icon-7-stroke.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/logoiconfont.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" title="main-css">
+
+	<!-- Style Switcher / remove for production -->
+	<link href="css/style-switcher.css" rel="stylesheet">
+
+	<!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/blue.css" title="blue">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/green.css" title="green">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/orange.css" title="orange">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/red.css" title="red">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/orangelight.css" title="orangelight">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/pinkish.css" title="pinkish">
+	<link rel="alternate stylesheet" type="text/css" href="css/colors/seagul.css" title="seagul">
+	<link rel="alternate stylesheet" type="text/css" href="css/base-light.css" title="base-light">
+</head>
+<body class="royal_preloader" data-spy="scroll" data-target=".navbar" data-offset="70">
+	<div id="royal_preloader"></div>
+
+	<!-- Start Switcher / Remove for production -->
+	<div class="demo_changer">
+	    <div class="demo-icon">
+	        <i class="pe-7s-settings"></i>
+	    </div><!-- end opener icon -->
+	    <div class="form_holder">
+	        <div class="row">
+	            <div class="col-sm-12">
+	                <div class="predefined_styles">
+	                	<h4>Base</h4>
+	                    <a href="" data-rel="main-css" class="styleswitch2"><div class="btn dark-css-square"></div></a>
+	                    <a href="" data-rel="base-light" class="styleswitch2"><div class="btn light-css-square"></div></a>
+	                    <hr>
+	                    <h4>Colors</h4>
+	                    <a href="" data-rel="main-css" class="styleswitch"><div class="btn purple-css-square"></div></a>
+	                    <a href="" data-rel="blue" class="styleswitch"><div class="btn blue-css-square"></div></a>
+	                    <a href="" data-rel="green" class="styleswitch"><div class="btn green-css-square"></div></a>
+	                    <a href="" data-rel="orange" class="styleswitch"><div class="btn orange-css-square"></div></a>
+	                    <a href="" data-rel="red" class="styleswitch"><div class="btn red-css-square"></div></a>
+	                    <a href="" data-rel="orangelight" class="styleswitch"><div class="btn orangelight-css-square"></div></a>
+	                    <a href="" data-rel="seagul" class="styleswitch"><div class="btn seagul-css-square"></div></a>
+	                    <a href="" data-rel="pinkish" class="styleswitch"><div class="btn pinkish-css-square"></div></a>
+	                </div><!-- /.end predefined_styles -->
+	            </div><!-- /.end col -->
+	        </div><!-- /.end row -->
+	    </div><!-- /.end form_holder -->
+	</div><!-- /.end demo_changer -->
+	<!-- End Switcher / Remove for production -->
+
+	<!-- Begin Header -->
+	<header>
+		<!-- Begin Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand scroll-link" href="#home" data-id="home"><span class="icon-handle-streamline-vector logo"></span></a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#home" data-id="home" class="scroll-link">Home</a></li>
+							<li><a href="#ideology" data-id="ideology" class="scroll-link">Ideology</a></li>
+							<li><a href="#services" data-id="services" class="scroll-link">Services</a></li>
+							<li><a href="#about" data-id="about" class="scroll-link">About</a></li>
+							<li><a href="#work" data-id="work" class="scroll-link">Work</a></li>
+							<li><a href="#contact" data-id="contact" class="scroll-link">Contact</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="components.html">Components</a></li>
+									<li><a href="pricing-options.html">Pricing Options</a></li>
+									<li><a href="team-options.html">Team Options</a></li>
+									<li><a href="../index.html">Demos</a></li>
+									<li><a href="https://wrapbootstrap.com/theme/particles-personal-agency-template-WB05N7852" target="_blank">Purchase</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+		<!-- End Navigation -->
+	</header>
+	<!-- End Header -->
+
+	<!-- Begin Jumbotron -->
+	<div class="jumbotron jumbotron-main parallax-window" id="home" data-parallax="scroll" data-image-src="images/slider1.jpg">
+		<div class="container center-vertically-holder">
+			<div class="center-vertically">
+				<div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
+					<h1 class="scaleReveal">
+						Rachel Pan
+						<!-- <strong>sleek &amp; clean</strong>. -->
+					</h1>
+					<hr class="bottomReveal">
+					<p class="bottomReveal">Front End Developer</p>
+					<a href="#ideology" data-id="ideology" class="scroll-link">
+						<div class="scroll-indicator rotateBottomReveal">
+							<span class="ion-mouse"></span><br>
+							<span class="ion-android-arrow-down arrow-scroll-indicator"></span>
+						</div>
+					</a>
+				</div><!-- /.column -->
+			</div><!-- /.vertical center -->
+		</div><!-- /.container -->
+	</div>
+	<!-- End Jumbotron -->
+
+	<!-- Start Profile -->
+	<section id="profile" class="background2 section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 section-title text-center">
+					<h2>Profile</h2>
+					<span class="section-divider"></span>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-sm-4">
+					<img alt="" src="images/Headshot.jpg" class="img-responsive">
+					<!-- <div class="profile-box">  I want to turn this into a hover effect
+						<ul class="list-unstyled">
+							<li><strong>Name:</strong> Rachel Pan</li>
+							<li><strong>Nationality:</strong> Bulgaria</li>
+							<li><strong>Position:</strong> Front End Development</li>
+							<li><strong>Phone:</strong> (818) 468 3482</li>
+							<li><strong>Email:</strong> rpan06@gmail.com</li>
+						</ul>
+					</div> -->
+				</div><!-- column -->
+				<div class="col-sm-8 mt30-xs">
+					<h5 class="heading-1 mb20">Intro</h5>
+					<h3 class="mb15 no-margin-top">Hey! I’m Rachel and I’m a web designer turned web developer.</h3>
+					<p class="text-small text-switch"></p>
+					<span class="divider"></span>
+					<p class="text-small">I graduated from UCI with a double major in pharmaceutical sciences and film arts. Juggling these two radically different degrees taught me how to manage my time efficiently so that I could graduate in four years. However, I soon learned that the pharmacy industry wasn’t for me, and I got an amazing job working as a graphic designer. I loved being able to make and design things that you could see in a magazine or a website. Fortunately, my passion led to a promotion at the company to web designer. Here, I was given the chance to design full web pages, which I would send to the company programmer. This started my interest in website development and I made the hard decision to leave the company to devote all my time to learning programming. It’s one of the best choices I’ve ever made! I’m absolutely thrilled to be in a career that’s never stagnant, where you are constantly learning and trying to better develop your skills. It's so cool to work on a team, putting together the little bits of code you wrote and to create something amazing!</p>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section>
+	<!-- End Profile -->
+
+	<!-- Begin Work -->
+	<section id="work" class="background1 section-padding-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 section-title text-center">
+					<h2>Work</h2>
+					<span class="section-divider mb15"></span>
+					<p class="mb30 scaleReveal">I've had the opportunity to work on a number of great projects. Here are a few of them.</p>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-xs-12 text-center mb50">
+					<!-- Filter Buttons -->
+					<button class="filter btn btn-default btn-category btn-lg" data-filter="all">All</button>
+					<button class="filter btn btn-default btn-category btn-lg" data-filter=".group-project">Group Project</button>
+					<button class="filter btn btn-default btn-category btn-lg" data-filter=".disaster-tracker">Disaster Tracker</button>
+					<button class="filter btn btn-default btn-category btn-lg" data-filter=".memory-match">Memory Match</button>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+			<div id="thework">
+
+				<!-- Item 1 -->
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 portfolio-box no-padding mix print group-project" data-my-order="1">
+					<div class="portfolio-image-holder"><img src="images/work/8.jpg" alt="2" class="img-responsive portfolio-image"></div>
+					<span class="portfolio-badge badge">Group Project</span>
+					<span class="portfolio-hover">
+						<span>
+							<a href="https://dribbble.com/" target="_blank">
+								<span class="portfolio-links"><span class="ion-ios-arrow-right portfolio-links-icons"></span></span>
+							</a>
+							<a href="images/work/8.jpg" class="zoom" title="Goodman's Burger">
+								<span class="portfolio-links"><span class="ion-arrow-expand portfolio-links-icons"></span></span>
+							</a>
+							<span class="project-title no-margin-bottom mt10">Goodman's Burger</span>
+						</span>
+					</span>
+				</div><!-- /.column -->
+
+				<!-- Item 2 -->
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 portfolio-box no-padding mix disaster-tracker" data-my-order="2">
+					<div class="portfolio-image-holder"><img src="images/work/DisasterTracker.jpg" alt="3" class="img-responsive portfolio-image"></div>
+					<span class="portfolio-badge badge">Disaster Tracker</span>
+					<span class="portfolio-hover">
+						<span>
+							<a href="https://dribbble.com/" target="_blank">
+								<span class="portfolio-links"><span class="ion-ios-arrow-right portfolio-links-icons"></span></span>
+							</a>
+							<a href="images/work/DisasterTracker.jpg" class="zoom" title="Paper Mockup">
+								<span class="portfolio-links"><span class="ion-arrow-expand portfolio-links-icons"></span></span>
+							</a>
+							<span class="project-title no-margin-bottom mt10">Disaster Tracker</span>
+						</span>
+					</span>
+				</div><!-- /.column -->
+
+				<!-- Item 3 -->
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 portfolio-box no-padding mix memory-match" data-my-order="3">
+					<div class="portfolio-image-holder"><img src="images/work/PokemonMemoryMatch.jpg" alt="1" class="img-responsive portfolio-image"></div>
+					<span class="portfolio-badge badge">Pokemon Memory Match</span>
+					<span class="portfolio-hover">
+						<span>
+							<a href="https://dribbble.com/" target="_blank">
+								<span class="portfolio-links"><span class="ion-ios-arrow-right portfolio-links-icons"></span></span>
+							</a>
+							<a href="images/work/PokemonMemoryMatch.jpg" class="zoom" title="Equipt Design">
+								<span class="portfolio-links"><span class="ion-arrow-expand portfolio-links-icons"></span></span>
+							</a>
+							<span class="project-title no-margin-bottom mt10">Pokemon Memory Match</span>
+						</span>
+					</span>
+				</div><!-- /.column -->
+
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section><!-- /.section -->
+	<!-- Begin Work -->
+
+	<!-- Begin Services -->
+	<section id="services" class="background2 section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 section-title text-center">
+						<h2>Services</h2>
+						<span class="section-divider"></span>
+						<p class="mb30 scaleReveal">I've had the opportunity to work on a number of great projects. Here are a few of them.</p>
+					</div><!-- /.column -->
+				</div><!-- /.row -->
+
+				<div class="row">
+					<!-- Item 1 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 portfolio-box no-padding mix print group-project">
+							<div class="portfolio-image-holder"><img src="images/work/8.jpg" alt="2" class="img-responsive portfolio-image"></div>
+							<span class="portfolio-badge badge">Group Project</span>
+							<span class="portfolio-hover">
+								<span>
+									<a href="https://dribbble.com/" target="_blank">
+										<span class="portfolio-links"><span class="ion-ios-arrow-right portfolio-links-icons"></span></span>
+									</a>
+									<a href="images/work/8.jpg" class="zoom" title="Goodman's Burger">
+										<span class="portfolio-links"><span class="ion-arrow-expand portfolio-links-icons"></span></span>
+									</a>
+									<span class="project-title no-margin-bottom mt10">Goodman's Burger</span>
+								</span>
+							</span>
+					</div><!-- /.column -->
+					<!-- Item 1 Modal -->
+					<div class="modal fade" id="item1-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-airplay services-icon-2"></span>
+									<h4 class="service-title">Web Design</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+
+					<!-- Item 2 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30-xs">
+						<div class="services-box topReveal">
+							<span class="services-badge badge">New</span>
+							<span class="pe-7s-phone services-icon"></span>
+							<h3 class="service-name">2. Applications</h3>
+							<p class="text-small">Lorem ipsum dolor sit amet, consectet adipiscing elit. Cras est urna, imperd eget sem at, pellentes que cursus elit.</p>
+							<button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item2-services">Info</button>
+						</div>
+					</div><!-- /.column -->
+					<!-- Item 2 Modal -->
+					<div class="modal fade" id="item2-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-phone services-icon-2"></span>
+									<h4 class="service-title">Applications</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+
+					<!-- Item 3 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30-sm mt30-xs">
+						<div class="services-box rightReveal">
+							<span class="pe-7s-camera services-icon"></span>
+							<h3 class="service-name">3. Photography</h3>
+							<p class="text-small">Lorem ipsum dolor sit amet, consectet adipiscing elit. Cras est urna, imperd eget sem at, pellentes que cursus elit.</p>
+							<button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item3-services">Info</button>
+						</div>
+					</div><!-- /.column -->
+					<!-- Item 3 Modal -->
+					<div class="modal fade" id="item3-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-camera services-icon-2"></span>
+									<h4 class="service-title">Photography</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+
+					<!-- Item 4 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+						<div class="services-box leftReveal">
+							<span class="services-badge badge">New</span>
+							<span class="pe-7s-anchor services-icon"></span>
+							<h3 class="service-name">4. Iconography</h3>
+							<p class="text-small">Lorem ipsum dolor sit amet, consectet adipiscing elit. Cras est urna, imperd eget sem at, pellentes que cursus elit.</p>
+							<button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item4-services">Info</button>
+						</div>
+					</div><!-- /.column -->
+					<!-- Item 4 Modal -->
+					<div class="modal fade" id="item4-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-anchor services-icon-2"></span>
+									<h4 class="service-title">Iconography</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+
+					<!-- Item 5 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+						<div class="services-box bottomReveal">
+							<span class="pe-7s-users services-icon"></span>
+							<h3 class="service-name">5. Support</h3>
+							<p class="text-small">Lorem ipsum dolor sit amet, consectet adipiscing elit. Cras est urna, imperd eget sem at, pellentes que cursus elit.</p>
+							<button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item5-services">Info</button>
+						</div>
+					</div><!-- /.column -->
+					<!-- Item 5 Modal -->
+					<div class="modal fade" id="item5-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-users services-icon-2"></span>
+									<h4 class="service-title">Support</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+
+					<!-- Item 6 -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mt30">
+						<div class="services-box rightReveal">
+							<span class="services-badge badge">New</span>
+							<span class="pe-7s-volume services-icon"></span>
+							<h3 class="service-name">6. Audio</h3>
+							<p class="text-small">Lorem ipsum dolor sit amet, consectet adipiscing elit. Cras est urna, imperd eget sem at, pellentes que cursus elit.</p>
+							<button type="button" class="btn btn-default mt10" data-toggle="modal" data-target="#item6-services">Info</button>
+						</div>
+					</div><!-- /.column -->
+					<!-- Item 6 Modal -->
+					<div class="modal fade" id="item6-services" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-ios-close-empty"></span>
+									</button>
+									<span class="pe-7s-volume services-icon-2"></span>
+									<h4 class="service-title">Audio</h4>
+								</div>
+								<div class="modal-body">
+									<p>No, thank ye, Bunger, said the English Captain, "he's welcome to the arm he has, since I can't help it, and didn't know him then; but not to another one. No more White Whales for me; I've lowered for him once.</p>
+									<h5 class="heading-1 modal-heading mb20">Why us</h5>
+									<p>"Well, then," interrupted Bunger, "give him your left arm for bait to get the right. Do you know, gentlemen"—very gravely and mathematically bowing to each Captain in succession—"Do you know, gentlemen, that the digestive organs of the whale are so inscrutably constructed by Divine Providence, that it is quite impossible for him to completely digest even a man's arm? And he knows it too.</p>
+									<h5 class="heading-1 modal-heading mb20">Focusing</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed.</p>
+									<h5 class="heading-1 modal-heading mb20">Professionals</h5>
+									<p class="no-margin-bottom">"Good God!" cried the English Captain, to whom the question was put. "What's the matter? He was heading east, I think.—Is your Captain crazy?" whispering Fedallah. Phasellus pulvinar lacinia elit nec tristique.</p>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section><!-- /.section -->
+		<!-- End Services -->
+
+	<!-- Begin Our Count -->
+	<section id="ourcount" class="section-padding parallax-window" data-parallax="scroll" data-image-src="images/slider1.jpg">
+		<div class="container">
+			<div class="row mb30">
+				<div class="section-title col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
+					<h2>Skills</h2>
+					<span class="section-divider mb15"></span>
+					<!-- <p class="no-margin">Text here</p> -->
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-sm-6 col-md-3 item leftReveal">
+					<div class="circle-hold">
+                        <i class="ion-coffee"></i>
+                    </div>
+                    <h2 class="timer mb5" data-from="1" data-to="4321" data-refresh-interval="20">1</h2>
+                    <p class="no-margin">Cups of coffee</p>
+				</div><!-- /.column -->
+				<div class="col-sm-6 col-md-3 item mt30-xs rightReveal">
+					<div class="circle-hold">
+                        <i class="ion-code"></i>
+                    </div>
+                    <h2 class="timer mb5" data-from="1" data-to="15381" data-refresh-interval="20">1</h2>
+                    <p class="no-margin">Lines of code</p>
+				</div><!-- /.column -->
+				<div class="col-sm-6 col-md-3 item mt30-xs mt30-sm leftReveal">
+					<div class="circle-hold">
+                        <i class="ion-android-people"></i>
+                    </div>
+                    <h2 class="timer mb5" data-from="1" data-to="17" data-refresh-interval="20">1</h2>
+                    <p class="no-margin">Employees</p>
+				</div><!-- /.column -->
+				<div class="col-sm-6 col-md-3 item mt30-xs mt30-sm rightReveal">
+					<div class="circle-hold">
+                        <i class="ion-android-restaurant"></i>
+                    </div>
+                    <h2 class="timer mb5" data-from="1" data-to="921" data-refresh-interval="20">1</h2>
+                    <p class="no-margin">Pizzas eaten</p>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section><!-- /.section -->
+	<!-- End Our Count -->
+
+	<!-- Begin Contact -->
+	<section id="contact" class="background2 section-padding">
+		<div class="container">
+			<div class="row mb30">
+				<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 section-title text-center">
+					<h2>Contact</h2>
+					<span class="section-divider mb15"></span>
+					<p class="no-margin scaleReveal">Our team is from all over the world and we know how to deliver quality pixels from miles away.</p>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-sm-5 col-lg-4">
+					<h5 class="heading-1 mb20">Visit Us</h5>
+					<h4 class="mb15">142 Pelican Drive • 1252nd Floor, Suite 420<br>New York City, New York 99912</h4>
+					<p class="no-margin text-xs-small">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam et aut.</p>
+					<hr class="mini-hr">
+					<p class="text-xs-small mb5"><strong class="text-switch">Email:</strong> info@particle.com</p>
+					<p class="text-xs-small mb5"><strong class="text-switch">Phone:</strong> +1 212-249-2390</p>
+					<p class="text-xs-small mb5"><strong class="text-switch">Fax:</strong> +1 112-444-2390</p>
+				</div><!-- /.column -->
+				<div class="col-sm-6 col-lg-7 mt30-xs">
+					<form data-toggle="validator" id="contactForm" name="contactForm">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<div class="controls">
+										<input class="form-control" data-error="This section is required."
+										id="msg_subject" placeholder="Subject *" required="" type="text">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div><!-- /.column -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<div class="controls">
+										<input class="form-control" id="phone" placeholder="Phone" type="text">
+									</div>
+								</div>
+							</div><!-- /.column -->
+						</div><!-- /.row -->
+						<div class="row mb10">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<div class="controls">
+										<input class="form-control" data-error="This section is required." id="name" placeholder="Your Name *" required="" type="text">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div><!-- /.column -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<div class="controls">
+										<input class="email form-control" data-error="This section is required." id="email" placeholder="Email *" required="" type="email">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div><!-- /.column -->
+						</div><!-- /.row -->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<div class="controls">
+										<textarea class="form-control" data-error="This section is required." id="message" placeholder="Message *" required="" rows="5"></textarea>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt15">
+							<div class="col-sm-6">
+								<div id="msgSubmit" class="h4 hidden mt10 no-margin-bottom"></div>
+							</div><!-- /.column -->
+							<div class="col-sm-6 text-right">
+								<button type="submit" id="submit" class="btn btn-default btn-lg">Send</button>
+							</div><!-- /.column -->
+						</div><!-- /.row -->
+					</form><!-- /.form -->
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section><!-- /.section -->
+	<!-- End Contact -->
+
+	<!-- Begin Footer -->
+	<footer class="footer-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text-center">
+					<span class="icon-handle-streamline-vector logo"></span>
+					<h2 class="theme-title">Particles<span class="theme-title-smaller">Theme</span></h2>
+					<a href="#"><span class="ion-social-twitter social-icons-dark-hover mr15"></span></a>
+	                <a href="#"><span class="ion-social-facebook social-icons-dark-hover mr15"></span></a>
+	                <a href="#"><span class="ion-social-googleplus-outline social-icons-dark-hover"></span></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text-small text-center">
+					<hr>
+					<button type="button" class="btn btn-primary btn-up-footer btn-lg scroll-top">Up</button>
+					<p class="no-margin">&copy; Denis Samardjiev</p>
+				</div><!-- /.column -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</footer><!-- /.footer -->
+	<!-- Begin Footer -->
+
+	<!-- Javascript Files -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mixitup.js"></script>
+	<script type="text/javascript" src="js/form-validator.min.js"></script>
+	<script type="text/javascript" src="js/jquery.inview.min.js"></script>
+	<script type="text/javascript" src="js/jquery.countTo.js"></script>
+	<script type="text/javascript">
+		/* ---- Counter (our count) ---- */
+		$('#ourcount').one('inview', function(event, isInView) {
+			if (isInView) {
+				$('.timer').countTo({speed: 3000});
+			}
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="js/scrollreveal.min.js"></script>
+	<script type="text/javascript" src="js/style-switcher.js"></script><!-- Remove for production -->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
