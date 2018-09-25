@@ -1410,6 +1410,11 @@ button {
     padding: 20px 0;
 }
 
+.counter-icon > img{
+    height: 100px;
+    width: 100px;
+}
+
 .counter .counter-icon {
     line-height: 1;
     font-size: 48px;
@@ -1423,8 +1428,15 @@ button {
 }
 
 .counter .counter-title {
-    font-size: 11px;
+    font-size: 15px;
+    /* 11px */
     margin: 0;
+}
+
+@media (max-width: 765px) {
+    .skills {
+        width: 50%;
+    }
 }
 
 /*!------------------------------------------------------------------
