@@ -221,7 +221,7 @@
  *  Contact   : jbdemonte@gmail.com
  *  Web site  : http://gmap3.net
  *  Licence   : GPL v3 : http://www.gnu.org/licenses/gpl.html
- *  
+ *
  *  Copyright (c) 2010-2014 Jean-Baptiste DEMONTE
  *  All rights reserved.
  */
@@ -8967,39 +8967,39 @@ $.fn[plugin].fx = {};
  * Copyright 2013 Pete Rojwongsuriya.
  * http://www.thepetedesign.com
  *
- * A very simple and light weight jQuery plugin that 
- * allows you to rotate multiple text without changing 
+ * A very simple and light weight jQuery plugin that
+ * allows you to rotate multiple text without changing
  * the layout
  * https://github.com/peachananr/simple-text-rotator
  *
  * ========================================================== */
 
 !function($){
-  
+
   var defaults = {
 		animation: "dissolve",
 		separator: ",",
 		speed: 2000
 	};
-	
+
 	$.fx.step.textShadowBlur = function(fx) {
     $(fx.elem).prop('textShadowBlur', fx.now).css({textShadow: '0 0 ' + Math.floor(fx.now) + 'px black'});
   };
-	
+
   $.fn.textrotator = function(options){
     var settings = $.extend({}, defaults, options);
-    
+
     return this.each(function(){
       var el = $(this)
       var array = [];
-      $.each(el.text().split(settings.separator), function(key, value) { 
-        array.push(value); 
+      $.each(el.text().split(settings.separator), function(key, value) {
+        array.push(value);
       });
       el.text(array[0]);
-      
+
       // animation option
       var rotate = function() {
-        switch (settings.animation) { 
+        switch (settings.animation) {
           case 'dissolve':
             el.animate({
               textShadowBlur:20,
@@ -9013,16 +9013,16 @@ $.fn[plugin].fx = {};
               }, 500 );
             });
           break;
-          
+
           case 'flip':
             if(el.find(".back").length > 0) {
               el.html(el.find(".back").html())
             }
-          
+
             var initial = el.text()
             var index = $.inArray(initial, array)
             if((index + 1) == array.length) index = -1
-            
+
             el.html("");
             $("<span class='front'>" + initial + "</span>").appendTo(el);
             $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
@@ -9032,18 +9032,18 @@ $.fn[plugin].fx = {};
               "-o-transform": " rotateY(-180deg)",
               "transform": " rotateY(-180deg)"
             })
-            
+
           break;
-          
+
           case 'flipUp':
             if(el.find(".back").length > 0) {
               el.html(el.find(".back").html())
             }
-          
+
             var initial = el.text()
             var index = $.inArray(initial, array)
             if((index + 1) == array.length) index = -1
-            
+
             el.html("");
             $("<span class='front'>" + initial + "</span>").appendTo(el);
             $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
@@ -9053,18 +9053,18 @@ $.fn[plugin].fx = {};
               "-o-transform": " rotateX(-180deg)",
               "transform": " rotateX(-180deg)"
             })
-            
+
           break;
-          
+
           case 'flipCube':
             if(el.find(".back").length > 0) {
               el.html(el.find(".back").html())
             }
-          
+
             var initial = el.text()
             var index = $.inArray(initial, array)
             if((index + 1) == array.length) index = -1
-            
+
             el.html("");
             $("<span class='front'>" + initial + "</span>").appendTo(el);
             $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
@@ -9074,18 +9074,18 @@ $.fn[plugin].fx = {};
               "-o-transform": " rotateY(180deg)",
               "transform": " rotateY(180deg)"
             })
-            
+
           break;
-          
+
           case 'flipCubeUp':
             if(el.find(".back").length > 0) {
               el.html(el.find(".back").html())
             }
-          
+
             var initial = el.text()
             var index = $.inArray(initial, array)
             if((index + 1) == array.length) index = -1
-            
+
             el.html("");
             $("<span class='front'>" + initial + "</span>").appendTo(el);
             $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
@@ -9095,16 +9095,16 @@ $.fn[plugin].fx = {};
               "-o-transform": " rotateX(180deg)",
               "transform": " rotateX(180deg)"
             })
-            
+
           break;
-          
+
           case 'spin':
             if(el.find(".rotating").length > 0) {
               el.html(el.find(".rotating").html())
             }
             index = $.inArray(el.text(), array)
             if((index + 1) == array.length) index = -1
-            
+
             el.wrapInner("<span class='rotating spin' />").find(".rotating").hide().text(array[index + 1]).show().css({
               "-webkit-transform": " rotate(0) scale(1)",
               "-moz-transform": "rotate(0) scale(1)",
@@ -9112,7 +9112,7 @@ $.fn[plugin].fx = {};
               "transform": "rotate(0) scale(1)"
             })
           break;
-          
+
           case 'fade':
             el.fadeOut(settings.speed, function() {
               index = $.inArray(el.text(), array)
@@ -9125,7 +9125,7 @@ $.fn[plugin].fx = {};
       setInterval(rotate, settings.speed);
     });
   }
-  
+
 }(window.jQuery);
 
 
@@ -9219,9 +9219,9 @@ $.fn[plugin].fx = {};
 
 /*>>core*/
 /**
- * 
+ *
  * Magnific Popup Core JS file
- * 
+ *
  */
 
 
@@ -9243,7 +9243,7 @@ var CLOSE_EVENT = 'Close',
 
 
 /**
- * Private vars 
+ * Private vars
  */
 var mfp, // As we have only one instance of MagnificPopup object, we define it locally to not to use 'this'
 	MagnificPopup = function(){},
@@ -9311,15 +9311,15 @@ var _mfpOn = function(name, f) {
 			v = ['ms','O','Moz','Webkit']; // 'v' for vendor
 
 		if( s['transition'] !== undefined ) {
-			return true; 
+			return true;
 		}
-			
+
 		while( v.length ) {
 			if( v.pop() + 'Transition' in s ) {
 				return true;
 			}
 		}
-				
+
 		return false;
 	};
 
@@ -9333,12 +9333,12 @@ MagnificPopup.prototype = {
 	constructor: MagnificPopup,
 
 	/**
-	 * Initializes Magnific Popup plugin. 
+	 * Initializes Magnific Popup plugin.
 	 * This function is triggered only once when $.fn.magnificPopup or $.magnificPopup is executed
 	 */
 	init: function() {
 		var appVersion = navigator.appVersion;
-		mfp.isIE7 = appVersion.indexOf("MSIE 7.") !== -1; 
+		mfp.isIE7 = appVersion.indexOf("MSIE 7.") !== -1;
 		mfp.isIE8 = appVersion.indexOf("MSIE 8.") !== -1;
 		mfp.isLowIE = mfp.isIE7 || mfp.isIE8;
 		mfp.isAndroid = (/android/gi).test(appVersion);
@@ -9365,7 +9365,7 @@ MagnificPopup.prototype = {
 
 		var i;
 
-		if(data.isObj === false) { 
+		if(data.isObj === false) {
 			// convert jQuery collection to array to avoid conflicts later
 			mfp.items = data.items.toArray();
 
@@ -9392,8 +9392,8 @@ MagnificPopup.prototype = {
 			mfp.updateItemHTML();
 			return;
 		}
-		
-		mfp.types = []; 
+
+		mfp.types = [];
 		_wrapClasses = '';
 		if(data.mainEl && data.mainEl.length) {
 			mfp.ev = data.mainEl.eq(0);
@@ -9412,7 +9412,7 @@ MagnificPopup.prototype = {
 
 
 
-		mfp.st = $.extend(true, {}, $.magnificPopup.defaults, data ); 
+		mfp.st = $.extend(true, {}, $.magnificPopup.defaults, data );
 		mfp.fixedContentPos = mfp.st.fixedContentPos === 'auto' ? !mfp.probablyMobile : mfp.st.fixedContentPos;
 
 		if(mfp.st.modal) {
@@ -9421,7 +9421,7 @@ MagnificPopup.prototype = {
 			mfp.st.showCloseBtn = false;
 			mfp.st.enableEscapeKey = false;
 		}
-		
+
 
 		// Building markup
 		// main containers are created only once
@@ -9473,7 +9473,7 @@ MagnificPopup.prototype = {
 			_wrapClasses += ' mfp-align-top';
 		}
 
-	
+
 
 		if(mfp.fixedContentPos) {
 			mfp.wrap.css({
@@ -9482,7 +9482,7 @@ MagnificPopup.prototype = {
 				overflowY: mfp.st.overflowY
 			});
 		} else {
-			mfp.wrap.css({ 
+			mfp.wrap.css({
 				top: _window.scrollTop(),
 				position: 'absolute'
 			});
@@ -9494,7 +9494,7 @@ MagnificPopup.prototype = {
 			});
 		}
 
-		
+
 
 		if(mfp.st.enableEscapeKey) {
 			// Close on ESC key
@@ -9513,7 +9513,7 @@ MagnificPopup.prototype = {
 		if(!mfp.st.closeOnContentClick) {
 			_wrapClasses += ' mfp-auto-cursor';
 		}
-		
+
 		if(_wrapClasses)
 			mfp.wrap.addClass(_wrapClasses);
 
@@ -9521,7 +9521,7 @@ MagnificPopup.prototype = {
 		// this triggers recalculation of layout, so we get it once to not to trigger twice
 		var windowHeight = mfp.wH = _window.height();
 
-		
+
 		var windowStyles = {};
 
 		if( mfp.fixedContentPos ) {
@@ -9542,8 +9542,8 @@ MagnificPopup.prototype = {
 			}
 		}
 
-		
-		
+
+
 		var classesToadd = mfp.st.mainClass;
 		if(mfp.isIE7) {
 			classesToadd += ' mfp-ie7';
@@ -9559,16 +9559,16 @@ MagnificPopup.prototype = {
 
 		// remove scrollbar, add margin e.t.c
 		$('html').css(windowStyles);
-		
+
 		// add everything to DOM
 		mfp.bgOverlay.add(mfp.wrap).prependTo( mfp.st.prependTo || _body );
 
 		// Save last focused element
 		mfp._lastFocusedEl = document.activeElement;
-		
+
 		// Wait for next cycle to allow CSS transition
 		setTimeout(function() {
-			
+
 			if(mfp.content) {
 				mfp._addClassToMFP(READY_CLASS);
 				mfp._setFocus();
@@ -9576,7 +9576,7 @@ MagnificPopup.prototype = {
 				// if content is not defined (not loaded e.t.c) we add class only for BG
 				mfp.bgOverlay.addClass(READY_CLASS);
 			}
-			
+
 			// Trap the focus in popup
 			_document.on('focusin' + EVENT_NS, mfp._onFocusIn);
 
@@ -9635,7 +9635,7 @@ MagnificPopup.prototype = {
 			}
 			$('html').css(windowStyles);
 		}
-		
+
 		_document.off('keyup' + EVENT_NS + ' focusin' + EVENT_NS);
 		mfp.ev.off(EVENT_NS);
 
@@ -9655,14 +9655,14 @@ MagnificPopup.prototype = {
 		if(mfp._lastFocusedEl) {
 			$(mfp._lastFocusedEl).focus(); // put tab focus back
 		}
-		mfp.currItem = null;	
+		mfp.currItem = null;
 		mfp.content = null;
 		mfp.currTemplate = null;
 		mfp.prevHeight = 0;
 
 		_mfpTrigger(AFTER_CLOSE_EVENT);
 	},
-	
+
 	updateSize: function(winHeight) {
 
 		if(mfp.isIOS) {
@@ -9699,17 +9699,17 @@ MagnificPopup.prototype = {
 			item = mfp.parseEl( mfp.index );
 		}
 
-		var type = item.type;	
+		var type = item.type;
 
 		_mfpTrigger('BeforeChange', [mfp.currItem ? mfp.currItem.type : '', type]);
 		// BeforeChange event works like so:
 		// _mfpOn('BeforeChange', function(e, prevType, newType) { });
-		
+
 		mfp.currItem = item;
 
-		
 
-		
+
+
 
 		if(!mfp.currTemplate[type]) {
 			var markup = mfp.st[type] ? mfp.st[type].markup : false;
@@ -9728,7 +9728,7 @@ MagnificPopup.prototype = {
 		if(_prevContentType && _prevContentType !== item.type) {
 			mfp.container.removeClass('mfp-'+_prevContentType+'-holder');
 		}
-		
+
 		var newContent = mfp['get' + type.charAt(0).toUpperCase() + type.slice(1)](item, mfp.currTemplate[type]);
 		mfp.appendContent(newContent, type);
 
@@ -9736,7 +9736,7 @@ MagnificPopup.prototype = {
 
 		_mfpTrigger(CHANGE_EVENT, item);
 		_prevContentType = item.type;
-		
+
 		// Append container back after its content changed
 		mfp.container.prepend(mfp.contentContainer);
 
@@ -9749,7 +9749,7 @@ MagnificPopup.prototype = {
 	 */
 	appendContent: function(newContent, type) {
 		mfp.content = newContent;
-		
+
 		if(newContent) {
 			if(mfp.st.showCloseBtn && mfp.st.closeBtnInside &&
 				mfp.currTemplate[type] === true) {
@@ -9772,7 +9772,7 @@ MagnificPopup.prototype = {
 
 
 
-	
+
 	/**
 	 * Creates Magnific Popup data object based on given data
 	 * @param  {int} index Index of item to parse
@@ -9826,11 +9826,11 @@ MagnificPopup.prototype = {
 
 		if(!options) {
 			options = {};
-		} 
+		}
 
 		var eName = 'click.magnificPopup';
 		options.mainEl = el;
-		
+
 		if(options.items) {
 			options.isObj = true;
 			el.off(eName).on(eName, eHandler);
@@ -9865,7 +9865,7 @@ MagnificPopup.prototype = {
 				}
 			}
 		}
-		
+
 		if(e.type) {
 			e.preventDefault();
 
@@ -9874,7 +9874,7 @@ MagnificPopup.prototype = {
 				e.stopPropagation();
 			}
 		}
-			
+
 
 		options.el = $(e.mfpEl);
 		if(options.delegate) {
@@ -10043,14 +10043,14 @@ $.magnificPopup = {
 	modules: [],
 
 	open: function(options, index) {
-		_checkInstance();	
+		_checkInstance();
 
 		if(!options) {
 			options = {};
 		} else {
 			options = $.extend(true, {}, options);
 		}
-			
+
 
 		options.isObj = true;
 		options.index = index || 0;
@@ -10065,16 +10065,16 @@ $.magnificPopup = {
 		if(module.options) {
 			$.magnificPopup.defaults[name] = module.options;
 		}
-		$.extend(this.proto, module.proto);			
+		$.extend(this.proto, module.proto);
 		this.modules.push(name);
 	},
 
-	defaults: {   
+	defaults: {
 
 		// Info about options is in docs:
 		// http://dimsemenov.com/plugins/magnific-popup/documentation.html#options
-		
-		disableOn: 0,	
+
+		disableOn: 0,
 
 		key: null,
 
@@ -10085,12 +10085,12 @@ $.magnificPopup = {
 		preloader: true,
 
 		focus: '', // CSS selector of input to focus after popup is opened
-		
+
 		closeOnContentClick: false,
 
 		closeOnBgClick: true,
 
-		closeBtnInside: true, 
+		closeBtnInside: true,
 
 		showCloseBtn: true,
 
@@ -10099,13 +10099,13 @@ $.magnificPopup = {
 		modal: false,
 
 		alignTop: false,
-	
+
 		removalDelay: 0,
 
 		prependTo: null,
-		
-		fixedContentPos: 'auto', 
-	
+
+		fixedContentPos: 'auto',
+
 		fixedBgPos: 'auto',
 
 		overflowY: 'auto',
@@ -10152,9 +10152,9 @@ $.fn.magnificPopup = function(options) {
 	} else {
 		// clone options obj
 		options = $.extend(true, {}, options);
-		
+
 		/*
-		 * As Zepto doesn't support .data() method for objects 
+		 * As Zepto doesn't support .data() method for objects
 		 * and it works only in normal browsers
 		 * we assign "options" object directly to the DOM element. FTW!
 		 */
@@ -10196,7 +10196,7 @@ console.log('Test #2:', performance.now() - start);
 
 var INLINE_NS = 'inline',
 	_hiddenClass,
-	_inlinePlaceholder, 
+	_inlinePlaceholder,
 	_lastInlineElement,
 	_putInlineElementsBack = function() {
 		if(_lastInlineElement) {
@@ -10344,14 +10344,14 @@ $.magnificPopup.registerModule(AJAX_NS, {
 
 
 
-	
+
 
 /*>>ajax*/
 
 /*>>image*/
 var _imgInterval,
 	_getTitle = function(item) {
-		if(item.data && item.data.title !== undefined) 
+		if(item.data && item.data.title !== undefined)
 			return item.data.title;
 
 		var src = mfp.st.image.titleSrc;
@@ -10382,7 +10382,7 @@ $.magnificPopup.registerModule('image', {
 					'</figure>'+
 				'</div>',
 		cursor: 'mfp-zoom-out-cur',
-		titleSrc: 'title', 
+		titleSrc: 'title',
 		verticalFit: true,
 		tError: '<a href="%url%">The image</a> could not be loaded.'
 	},
@@ -10427,13 +10427,13 @@ $.magnificPopup.registerModule('image', {
 		},
 		_onImageHasSize: function(item) {
 			if(item.img) {
-				
+
 				item.hasSize = true;
 
 				if(_imgInterval) {
 					clearInterval(_imgInterval);
 				}
-				
+
 				item.isCheckingImgSize = false;
 
 				_mfpTrigger('ImageHasSize', item);
@@ -10441,7 +10441,7 @@ $.magnificPopup.registerModule('image', {
 				if(item.imgHidden) {
 					if(mfp.content)
 						mfp.content.removeClass('mfp-loading');
-					
+
 					item.imgHidden = false;
 				}
 
@@ -10494,7 +10494,7 @@ $.magnificPopup.registerModule('image', {
 					if(item) {
 						if (item.img[0].complete) {
 							item.img.off('.mfploader');
-							
+
 							if(item === mfp.currItem){
 								mfp._onImageHasSize(item);
 
@@ -10505,7 +10505,7 @@ $.magnificPopup.registerModule('image', {
 							item.loaded = true;
 
 							_mfpTrigger('ImageLoadComplete');
-							
+
 						}
 						else {
 							// if image complete check fails 200 times (20 sec), we assume that there was an error.
@@ -10552,7 +10552,7 @@ $.magnificPopup.registerModule('image', {
 				img = item.img[0];
 				if(img.naturalWidth > 0) {
 					item.hasSize = true;
-				} else if(!img.width) {										
+				} else if(!img.width) {
 					item.hasSize = false;
 				}
 			}
@@ -10584,7 +10584,7 @@ $.magnificPopup.registerModule('image', {
 				item.imgHidden = true;
 				template.addClass('mfp-loading');
 				mfp.findImageSize(item);
-			} 
+			}
 
 			return template;
 		}
@@ -10601,7 +10601,7 @@ var hasMozTransform,
 		if(hasMozTransform === undefined) {
 			hasMozTransform = document.createElement('p').style.MozTransform !== undefined;
 		}
-		return hasMozTransform;		
+		return hasMozTransform;
 	};
 
 $.magnificPopup.registerModule('zoom', {
@@ -10621,7 +10621,7 @@ $.magnificPopup.registerModule('zoom', {
 			var zoomSt = mfp.st.zoom,
 				ns = '.zoom',
 				image;
-				
+
 			if(!zoomSt.enabled || !mfp.supportsTransition) {
 				return;
 			}
@@ -10657,7 +10657,7 @@ $.magnificPopup.registerModule('zoom', {
 					mfp.content.css('visibility', 'hidden');
 
 					// Basically, all code below does is clones existing image, puts in on top of the current one and animated it
-					
+
 					image = mfp._getItemToZoom();
 
 					if(!image) {
@@ -10665,8 +10665,8 @@ $.magnificPopup.registerModule('zoom', {
 						return;
 					}
 
-					animatedImg = getElToAnimate(image); 
-					
+					animatedImg = getElToAnimate(image);
+
 					animatedImg.css( mfp._getOffset() );
 
 					mfp.wrap.append(animatedImg);
@@ -10681,7 +10681,7 @@ $.magnificPopup.registerModule('zoom', {
 								animatedImg.remove();
 								image = animatedImg = null;
 								_mfpTrigger('ZoomAnimationEnded');
-							}, 16); // avoid blink when switching images 
+							}, 16); // avoid blink when switching images
 
 						}, duration); // this timeout equals animation duration
 
@@ -10705,12 +10705,12 @@ $.magnificPopup.registerModule('zoom', {
 						}
 						animatedImg = getElToAnimate(image);
 					}
-					
-					
+
+
 					animatedImg.css( mfp._getOffset(true) );
 					mfp.wrap.append(animatedImg);
 					mfp.content.css('visibility', 'hidden');
-					
+
 					setTimeout(function() {
 						animatedImg.css( mfp._getOffset() );
 					}, 16);
@@ -10725,7 +10725,7 @@ $.magnificPopup.registerModule('zoom', {
 						animatedImg.remove();
 					}
 					image = null;
-				}	
+				}
 			});
 		},
 
@@ -10757,7 +10757,7 @@ $.magnificPopup.registerModule('zoom', {
 
 
 			/*
-			
+
 			Animating left + top + width/height looks glitchy in Firefox, but perfect in Chrome. And vice-versa.
 
 			 */
@@ -10788,11 +10788,11 @@ $.magnificPopup.registerModule('zoom', {
 
 var IFRAME_NS = 'iframe',
 	_emptyPage = '//about:blank',
-	
+
 	_fixIframeBugs = function(isShowing) {
 		if(mfp.currTemplate[IFRAME_NS]) {
 			var el = mfp.currTemplate[IFRAME_NS].find('iframe');
-			if(el.length) { 
+			if(el.length) {
 				// reset src after the popup is closed to avoid "video keeps playing after popup is closed" bug
 				if(!isShowing) {
 					el[0].src = _emptyPage;
@@ -10819,8 +10819,8 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 		// we don't care and support only one default type of URL by default
 		patterns: {
 			youtube: {
-				index: 'youtube.com', 
-				id: 'v=', 
+				index: 'youtube.com',
+				id: 'v=',
 				src: '//www.youtube.com/embed/%id%?autoplay=1'
 			},
 			vimeo: {
@@ -10845,7 +10845,7 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 						_fixIframeBugs(); // iframe if removed
 					} else if(newType === IFRAME_NS) {
 						_fixIframeBugs(true); // iframe is showing
-					} 
+					}
 				}// else {
 					// iframe source is switched, don't do anything
 				//}
@@ -10859,7 +10859,7 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 		getIframe: function(item, template) {
 			var embedSrc = item.src;
 			var iframeSt = mfp.st.iframe;
-				
+
 			$.each(iframeSt.patterns, function() {
 				if(embedSrc.indexOf( this.index ) > -1) {
 					if(this.id) {
@@ -10873,7 +10873,7 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 					return false; // break;
 				}
 			});
-			
+
 			var dataObj = {};
 			if(iframeSt.srcAction) {
 				dataObj[iframeSt.srcAction] = embedSrc;
@@ -10930,7 +10930,7 @@ $.magnificPopup.registerModule('gallery', {
 				supportsFastClick = Boolean($.fn.mfpFastClick);
 
 			mfp.direction = true; // true - next, false - prev
-			
+
 			if(!gSt || !gSt.enabled ) return false;
 
 			_wrapClasses += ' mfp-gallery';
@@ -10969,16 +10969,16 @@ $.magnificPopup.registerModule('gallery', {
 			_mfpOn('BuildControls' + ns, function() {
 				if(mfp.items.length > 1 && gSt.arrows && !mfp.arrowLeft) {
 					var markup = gSt.arrowMarkup,
-						arrowLeft = mfp.arrowLeft = $( markup.replace(/%title%/gi, gSt.tPrev).replace(/%dir%/gi, 'left') ).addClass(PREVENT_CLOSE_CLASS),			
+						arrowLeft = mfp.arrowLeft = $( markup.replace(/%title%/gi, gSt.tPrev).replace(/%dir%/gi, 'left') ).addClass(PREVENT_CLOSE_CLASS),
 						arrowRight = mfp.arrowRight = $( markup.replace(/%title%/gi, gSt.tNext).replace(/%dir%/gi, 'right') ).addClass(PREVENT_CLOSE_CLASS);
 
 					var eName = supportsFastClick ? 'mfpFastClick' : 'click';
 					arrowLeft[eName](function() {
 						mfp.prev();
-					});			
+					});
 					arrowRight[eName](function() {
 						mfp.next();
-					});	
+					});
 
 					// Polyfill for :before and :after (adds elements with classes mfp-a and mfp-b)
 					if(mfp.isIE7) {
@@ -10998,21 +10998,21 @@ $.magnificPopup.registerModule('gallery', {
 				mfp._preloadTimeout = setTimeout(function() {
 					mfp.preloadNearbyImages();
 					mfp._preloadTimeout = null;
-				}, 16);		
+				}, 16);
 			});
 
 
 			_mfpOn(CLOSE_EVENT+ns, function() {
 				_document.off(ns);
 				mfp.wrap.off('click'+ns);
-			
+
 				if(mfp.arrowLeft && supportsFastClick) {
 					mfp.arrowLeft.add(mfp.arrowRight).destroyMfpFastClick();
 				}
 				mfp.arrowRight = mfp.arrowLeft = null;
 			});
 
-		}, 
+		},
 		next: function() {
 			mfp.direction = true;
 			mfp.index = _getLoopedId(mfp.index + 1);
@@ -11177,11 +11177,11 @@ $.magnificPopup.registerModule(RETINA_NS, {
  *
  * To unbind:
  * $('.your-el').destroyMfpFastClick();
- * 
- * 
+ *
+ *
  * Note that it's a very basic and simple implementation, it blocks ghost click on the same element where it was bound.
  * If you need something more advanced, use plugin by FT Labs https://github.com/ftlabs/fastclick
- * 
+ *
  */
 
 (function() {
@@ -11265,7 +11265,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
  * easy-pie-chart
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *
- * @license 
+ * @license
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
  * @version 2.1.7
  **/
@@ -15623,13 +15623,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return twitterFetcher;
 }));
 /*!
- * 
+ *
  *   typed.js - A JavaScript Typing Animation Library
  *   Author: Matt Boldt <me@mattboldt.com>
  *   Version: v2.0.4
  *   Url: https://github.com/mattboldt/typed.js
  *   License(s): MIT
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -15688,47 +15688,47 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	
+
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
+
 	var _initializerJs = __webpack_require__(1);
-	
+
 	var _htmlParserJs = __webpack_require__(3);
-	
+
 	/**
 	 * Welcome to Typed.js!
 	 * @param {string} elementId HTML element ID _OR_ HTML element
 	 * @param {object} options options object
 	 * @returns {object} a new Typed object
 	 */
-	
+
 	var Typed = (function () {
 	  function Typed(elementId, options) {
 	    _classCallCheck(this, Typed);
-	
+
 	    // Initialize it up
 	    _initializerJs.initializer.load(this, options, elementId);
 	    // All systems go!
 	    this.begin();
 	  }
-	
+
 	  /**
 	   * Toggle start() and stop() of the Typed instance
 	   * @public
 	   */
-	
+
 	  _createClass(Typed, [{
 	    key: 'toggle',
 	    value: function toggle() {
 	      this.pause.status ? this.start() : this.stop();
 	    }
-	
+
 	    /**
 	     * Stop typing / backspacing and enable cursor blinking
 	     * @public
@@ -15742,7 +15742,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.pause.status = true;
 	      this.options.onStop(this.arrayPos, this);
 	    }
-	
+
 	    /**
 	     * Start typing / backspacing after being stopped
 	     * @public
@@ -15760,7 +15760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      this.options.onStart(this.arrayPos, this);
 	    }
-	
+
 	    /**
 	     * Destroy this instance of Typed
 	     * @public
@@ -15771,7 +15771,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.reset(false);
 	      this.options.onDestroy(this);
 	    }
-	
+
 	    /**
 	     * Reset Typed and optionally restarts
 	     * @param {boolean} restart
@@ -15781,7 +15781,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'reset',
 	    value: function reset() {
 	      var restart = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
-	
+
 	      clearInterval(this.timeout);
 	      this.replaceText('');
 	      if (this.cursor && this.cursor.parentNode) {
@@ -15797,7 +15797,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.begin();
 	      }
 	    }
-	
+
 	    /**
 	     * Begins the typing animation
 	     * @private
@@ -15806,7 +15806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'begin',
 	    value: function begin() {
 	      var _this = this;
-	
+
 	      this.typingComplete = false;
 	      this.shuffleStringsIfNeeded(this);
 	      this.insertCursor();
@@ -15821,7 +15821,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }, this.startDelay);
 	    }
-	
+
 	    /**
 	     * Called for each character typed
 	     * @param {string} curString the current string in the strings array
@@ -15832,25 +15832,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'typewrite',
 	    value: function typewrite(curString, curStrPos) {
 	      var _this2 = this;
-	
+
 	      if (this.fadeOut && this.el.classList.contains(this.fadeOutClass)) {
 	        this.el.classList.remove(this.fadeOutClass);
 	        if (this.cursor) this.cursor.classList.remove(this.fadeOutClass);
 	      }
-	
+
 	      var humanize = this.humanizer(this.typeSpeed);
 	      var numChars = 1;
-	
+
 	      if (this.pause.status === true) {
 	        this.setPauseStatus(curString, curStrPos, true);
 	        return;
 	      }
-	
+
 	      // contain typing function in a timeout humanize'd delay
 	      this.timeout = setTimeout(function () {
 	        // skip over any HTML chars
 	        curStrPos = _htmlParserJs.htmlParser.typeHtmlChars(curString, curStrPos, _this2);
-	
+
 	        var pauseTime = 0;
 	        var substr = curString.substr(curStrPos);
 	        // check for an escape character before a pause value
@@ -15869,7 +15869,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this2.toggleBlinking(true);
 	          }
 	        }
-	
+
 	        // check for skip characters formatted as
 	        // "this is a `string to print NOW` ..."
 	        if (substr.charAt(0) === '`') {
@@ -15884,12 +15884,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	          curString = stringBeforeSkip + stringSkipped + stringAfterSkip;
 	          numChars--;
 	        }
-	
+
 	        // timeout for any pause after a character
 	        _this2.timeout = setTimeout(function () {
 	          // Accounts for blinking while paused
 	          _this2.toggleBlinking(false);
-	
+
 	          // We're done with this sentence!
 	          if (curStrPos === curString.length) {
 	            _this2.doneTyping(curString, curStrPos);
@@ -15902,11 +15902,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this2.options.onTypingResumed(_this2.arrayPos, _this2);
 	          }
 	        }, pauseTime);
-	
+
 	        // humanized value for typing
 	      }, humanize);
 	    }
-	
+
 	    /**
 	     * Continue to the next string & begin typing
 	     * @param {string} curString the current string in the strings array
@@ -15929,7 +15929,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // loop the function
 	      this.typewrite(curString, curStrPos);
 	    }
-	
+
 	    /**
 	     * We're done typing all strings
 	     * @param {string} curString the current string in the strings array
@@ -15940,7 +15940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'doneTyping',
 	    value: function doneTyping(curString, curStrPos) {
 	      var _this3 = this;
-	
+
 	      // fires callback function
 	      this.options.onStringTyped(this.arrayPos, this);
 	      this.toggleBlinking(true);
@@ -15957,7 +15957,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this3.backspace(curString, curStrPos);
 	      }, this.backDelay);
 	    }
-	
+
 	    /**
 	     * Backspaces 1 character at a time
 	     * @param {string} curString the current string in the strings array
@@ -15968,22 +15968,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'backspace',
 	    value: function backspace(curString, curStrPos) {
 	      var _this4 = this;
-	
+
 	      if (this.pause.status === true) {
 	        this.setPauseStatus(curString, curStrPos, true);
 	        return;
 	      }
 	      if (this.fadeOut) return this.initFadeOut();
-	
+
 	      this.toggleBlinking(false);
 	      var humanize = this.humanizer(this.backSpeed);
-	
+
 	      this.timeout = setTimeout(function () {
 	        curStrPos = _htmlParserJs.htmlParser.backSpaceHtmlChars(curString, curStrPos, _this4);
 	        // replace text with base text + typed characters
 	        var curStringAtPosition = curString.substr(0, curStrPos);
 	        _this4.replaceText(curStringAtPosition);
-	
+
 	        // if smartBack is enabled
 	        if (_this4.smartBackspace) {
 	          // the remaining part of the current string is equal of the same part of the new string
@@ -15994,7 +15994,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _this4.stopNum = 0;
 	          }
 	        }
-	
+
 	        // if the number (id of character in current string) is
 	        // less than the stop number, keep going
 	        if (curStrPos > _this4.stopNum) {
@@ -16019,7 +16019,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // humanized value for typing
 	      }, humanize);
 	    }
-	
+
 	    /**
 	     * Full animation is complete
 	     * @private
@@ -16034,7 +16034,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.typingComplete = true;
 	      }
 	    }
-	
+
 	    /**
 	     * Has the typing been stopped
 	     * @param {string} curString the current string in the strings array
@@ -16049,7 +16049,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.pause.curString = curString;
 	      this.pause.curStrPos = curStrPos;
 	    }
-	
+
 	    /**
 	     * Toggle the blinking cursor
 	     * @param {boolean} isBlinking
@@ -16066,7 +16066,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var status = isBlinking ? 'infinite' : 0;
 	      this.cursor.style.animationIterationCount = status;
 	    }
-	
+
 	    /**
 	     * Speed in MS to type
 	     * @param {number} speed
@@ -16077,7 +16077,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function humanizer(speed) {
 	      return Math.round(Math.random() * speed / 2) + speed;
 	    }
-	
+
 	    /**
 	     * Shuffle the sequence of the strings array
 	     * @private
@@ -16090,7 +16090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return Math.random() - 0.5;
 	      });
 	    }
-	
+
 	    /**
 	     * Adds a CSS class to fade out current string
 	     * @private
@@ -16099,13 +16099,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'initFadeOut',
 	    value: function initFadeOut() {
 	      var _this5 = this;
-	
+
 	      this.el.className += ' ' + this.fadeOutClass;
 	      if (this.cursor) this.cursor.className += ' ' + this.fadeOutClass;
 	      return setTimeout(function () {
 	        _this5.arrayPos++;
 	        _this5.replaceText('');
-	
+
 	        // Resets current string if end of loop reached
 	        if (_this5.strings.length > _this5.arrayPos) {
 	          _this5.typewrite(_this5.strings[_this5.sequence[_this5.arrayPos]], 0);
@@ -16115,7 +16115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }, this.fadeOutDelay);
 	    }
-	
+
 	    /**
 	     * Replaces current text in the HTML element
 	     * depending on element type
@@ -16137,7 +16137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	    }
-	
+
 	    /**
 	     * If using input elements, bind focus in order to
 	     * start and stop the animation
@@ -16147,7 +16147,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'bindFocusEvents',
 	    value: function bindFocusEvents() {
 	      var _this6 = this;
-	
+
 	      if (!this.isInput) return;
 	      this.el.addEventListener('focus', function (e) {
 	        _this6.stop();
@@ -16159,7 +16159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this6.start();
 	      });
 	    }
-	
+
 	    /**
 	     * On init, insert the cursor element
 	     * @private
@@ -16175,10 +16175,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.el.parentNode && this.el.parentNode.insertBefore(this.cursor, this.el.nextSibling);
 	    }
 	  }]);
-	
+
 	  return Typed;
 	})();
-	
+
 	exports['default'] = Typed;
 	module.exports = exports['default'];
 
@@ -16187,35 +16187,35 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
+
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
+
 	var _defaultsJs = __webpack_require__(2);
-	
+
 	var _defaultsJs2 = _interopRequireDefault(_defaultsJs);
-	
+
 	/**
 	 * Initialize the Typed object
 	 */
-	
+
 	var Initializer = (function () {
 	  function Initializer() {
 	    _classCallCheck(this, Initializer);
 	  }
-	
+
 	  _createClass(Initializer, [{
 	    key: 'load',
-	
+
 	    /**
 	     * Load up defaults & options on the Typed instance
 	     * @param {Typed} self instance of Typed
@@ -16223,7 +16223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} elementId HTML element ID _OR_ instance of HTML element
 	     * @private
 	     */
-	
+
 	    value: function load(self, options, elementId) {
 	      // chosen element to manipulate text
 	      if (typeof elementId === 'string') {
@@ -16231,64 +16231,64 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } else {
 	        self.el = elementId;
 	      }
-	
+
 	      self.options = _extends({}, _defaultsJs2['default'], options);
-	
+
 	      // attribute to type into
 	      self.isInput = self.el.tagName.toLowerCase() === 'input';
 	      self.attr = self.options.attr;
 	      self.bindInputFocusEvents = self.options.bindInputFocusEvents;
-	
+
 	      // show cursor
 	      self.showCursor = self.isInput ? false : self.options.showCursor;
-	
+
 	      // custom cursor
 	      self.cursorChar = self.options.cursorChar;
-	
+
 	      // Is the cursor blinking
 	      self.cursorBlinking = true;
-	
+
 	      // text content of element
 	      self.elContent = self.attr ? self.el.getAttribute(self.attr) : self.el.textContent;
-	
+
 	      // html or plain text
 	      self.contentType = self.options.contentType;
-	
+
 	      // typing speed
 	      self.typeSpeed = self.options.typeSpeed;
-	
+
 	      // add a delay before typing starts
 	      self.startDelay = self.options.startDelay;
-	
+
 	      // backspacing speed
 	      self.backSpeed = self.options.backSpeed;
-	
+
 	      // only backspace what doesn't match the previous string
 	      self.smartBackspace = self.options.smartBackspace;
-	
+
 	      // amount of time to wait before backspacing
 	      self.backDelay = self.options.backDelay;
-	
+
 	      // Fade out instead of backspace
 	      self.fadeOut = self.options.fadeOut;
 	      self.fadeOutClass = self.options.fadeOutClass;
 	      self.fadeOutDelay = self.options.fadeOutDelay;
-	
+
 	      // variable to check whether typing is currently paused
 	      self.isPaused = false;
-	
+
 	      // input strings of text
 	      self.strings = self.options.strings.map(function (s) {
 	        return s.trim();
 	      });
-	
+
 	      // div containing strings
 	      if (typeof self.options.stringsElement === 'string') {
 	        self.stringsElement = document.querySelector(self.options.stringsElement);
 	      } else {
 	        self.stringsElement = self.options.stringsElement;
 	      }
-	
+
 	      if (self.stringsElement) {
 	        self.strings = [];
 	        self.stringsElement.style.display = 'none';
@@ -16296,11 +16296,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var _iteratorNormalCompletion = true;
 	        var _didIteratorError = false;
 	        var _iteratorError = undefined;
-	
+
 	        try {
 	          for (var _iterator = strings[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 	            var s = _step.value;
-	
+
 	            self.strings.push(s.innerHTML.trim());
 	          }
 	        } catch (err) {
@@ -16318,46 +16318,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	        }
 	      }
-	
+
 	      // character number position of current string
 	      self.strPos = 0;
-	
+
 	      // current array position
 	      self.arrayPos = 0;
-	
+
 	      // index of string to stop backspacing on
 	      self.stopNum = 0;
-	
+
 	      // Looping logic
 	      self.loop = self.options.loop;
 	      self.loopCount = self.options.loopCount;
 	      self.curLoop = 0;
-	
+
 	      // shuffle the strings
 	      self.shuffle = self.options.shuffle;
 	      // the order of strings
 	      self.sequence = [];
-	
+
 	      self.pause = {
 	        status: false,
 	        typewrite: true,
 	        curString: '',
 	        curStrPos: 0
 	      };
-	
+
 	      // When the typing is complete (when not looped)
 	      self.typingComplete = false;
-	
+
 	      // Set the order in which the strings are typed
 	      for (var i in self.strings) {
 	        self.sequence[i] = i;
 	      }
-	
+
 	      // If there is some text in the element
 	      self.currentElContent = this.getCurrentElContent(self);
-	
+
 	      self.autoInsertCss = self.options.autoInsertCss;
-	
+
 	      this.appendAnimationCss(self);
 	    }
 	  }, {
@@ -16384,7 +16384,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (!self.showCursor || !self.fadeOut) {
 	        return;
 	      }
-	
+
 	      var css = document.createElement('style');
 	      css.type = 'text/css';
 	      var innerCss = '';
@@ -16401,10 +16401,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      document.head.appendChild(css);
 	    }
 	  }]);
-	
+
 	  return Initializer;
 	})();
-	
+
 	exports['default'] = Initializer;
 	var initializer = new Initializer();
 	exports.initializer = initializer;
@@ -16418,9 +16418,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @returns {object} Typed defaults & options
 	 * @public
 	 */
-	
+
 	'use strict';
-	
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
@@ -16431,37 +16431,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 	  strings: ['These are the default values...', 'You know what you should do?', 'Use your own!', 'Have a great day!'],
 	  stringsElement: null,
-	
+
 	  /**
 	   * @property {number} typeSpeed type speed in milliseconds
 	   */
 	  typeSpeed: 0,
-	
+
 	  /**
 	   * @property {number} startDelay time before typing starts in milliseconds
 	   */
 	  startDelay: 0,
-	
+
 	  /**
 	   * @property {number} backSpeed backspacing speed in milliseconds
 	   */
 	  backSpeed: 0,
-	
+
 	  /**
 	   * @property {boolean} smartBackspace only backspace what doesn't match the previous string
 	   */
 	  smartBackspace: true,
-	
+
 	  /**
 	   * @property {boolean} shuffle shuffle the strings
 	   */
 	  shuffle: false,
-	
+
 	  /**
 	   * @property {number} backDelay time before backspacing in milliseconds
 	   */
 	  backDelay: 700,
-	
+
 	  /**
 	   * @property {boolean} fadeOut Fade out instead of backspace
 	   * @property {string} fadeOutClass css class for fade animation
@@ -16470,14 +16470,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  fadeOut: false,
 	  fadeOutClass: 'typed-fade-out',
 	  fadeOutDelay: 500,
-	
+
 	  /**
 	   * @property {boolean} loop loop strings
 	   * @property {number} loopCount amount of loops
 	   */
 	  loop: false,
 	  loopCount: Infinity,
-	
+
 	  /**
 	   * @property {boolean} showCursor show cursor
 	   * @property {string} cursorChar character for cursor
@@ -16486,90 +16486,90 @@ return /******/ (function(modules) { // webpackBootstrap
 	  showCursor: true,
 	  cursorChar: '|',
 	  autoInsertCss: true,
-	
+
 	  /**
 	   * @property {string} attr attribute for typing
 	   * Ex: input placeholder, value, or just HTML text
 	   */
 	  attr: null,
-	
+
 	  /**
 	   * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
 	   */
 	  bindInputFocusEvents: false,
-	
+
 	  /**
 	   * @property {string} contentType 'html' or 'null' for plaintext
 	   */
 	  contentType: 'html',
-	
+
 	  /**
 	   * All typing is complete
 	   * @param {Typed} self
 	   */
 	  onComplete: function onComplete(self) {},
-	
+
 	  /**
 	   * Before each string is typed
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  preStringTyped: function preStringTyped(arrayPos, self) {},
-	
+
 	  /**
 	   * After each string is typed
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  onStringTyped: function onStringTyped(arrayPos, self) {},
-	
+
 	  /**
 	   * During looping, after last string is typed
 	   * @param {Typed} self
 	   */
 	  onLastStringBackspaced: function onLastStringBackspaced(self) {},
-	
+
 	  /**
 	   * Typing has been stopped
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  onTypingPaused: function onTypingPaused(arrayPos, self) {},
-	
+
 	  /**
 	   * Typing has been started after being stopped
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  onTypingResumed: function onTypingResumed(arrayPos, self) {},
-	
+
 	  /**
 	   * After reset
 	   * @param {Typed} self
 	   */
 	  onReset: function onReset(self) {},
-	
+
 	  /**
 	   * After stop
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  onStop: function onStop(arrayPos, self) {},
-	
+
 	  /**
 	   * After start
 	   * @param {number} arrayPos
 	   * @param {Typed} self
 	   */
 	  onStart: function onStart(arrayPos, self) {},
-	
+
 	  /**
 	   * After destroy
 	   * @param {Typed} self
 	   */
 	  onDestroy: function onDestroy(self) {}
 	};
-	
+
 	exports['default'] = defaults;
 	module.exports = exports['default'];
 
@@ -16577,30 +16577,30 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 3 */
 /***/ (function(module, exports) {
 
-	
+
 	/**
 	 * TODO: These methods can probably be combined somehow
 	 * Parse HTML tags & HTML Characters
 	 */
-	
+
 	'use strict';
-	
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	
+
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
+
 	var HTMLParser = (function () {
 	  function HTMLParser() {
 	    _classCallCheck(this, HTMLParser);
 	  }
-	
+
 	  _createClass(HTMLParser, [{
 	    key: 'typeHtmlChars',
-	
+
 	    /**
 	     * Type HTML tags & HTML Characters
 	     * @param {string} curString Current string
@@ -16609,7 +16609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @returns {number} a new string position
 	     * @private
 	     */
-	
+
 	    value: function typeHtmlChars(curString, curStrPos, self) {
 	      if (self.contentType !== 'html') return curStrPos;
 	      var curChar = curString.substr(curStrPos).charAt(0);
@@ -16630,7 +16630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      return curStrPos;
 	    }
-	
+
 	    /**
 	     * Backspace HTML tags and HTML Characters
 	     * @param {string} curString Current string
@@ -16662,10 +16662,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return curStrPos;
 	    }
 	  }]);
-	
+
 	  return HTMLParser;
 	})();
-	
+
 	exports['default'] = HTMLParser;
 	var htmlParser = new HTMLParser();
 	exports.htmlParser = htmlParser;
@@ -18489,7 +18489,7 @@ if (typeof Object.create !== 'function') {
 
 				$.ajax({
 					type: 'POST',
-					url: 'assets/php/contact.php',
+					url: 'phpmailer/mail_handler.php',
 					dataType: 'json',
 					data: {
 						name: name,
