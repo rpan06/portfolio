@@ -42,7 +42,7 @@ if ($output['success'] !== null){
 
 // Set up email object
 $mail = new PHPMailer\PHPMailer\PHPMailer;
-$mail->SMTPDebug = 3;           // Enable verbose debug output. Change to 0 to disable debugging output.
+$mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 $mail->isSMTP();                // Set mailer to use SMTP.
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
 $mail->SMTPAuth = true;         // Enable SMTP authentication
@@ -84,8 +84,8 @@ if(!$mail->send()) {
     // echo 'Message could not be sent.';
     // echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    $output['success'] = true;
-    // echo 'Message has been sent';
+    // $output['success'] = true;
+    echo 'Message has been sent. Thank you!';
 }
-echo json_encode($output);
+// echo json_encode($output);
 ?>
