@@ -79,13 +79,25 @@ $mail->AltBody = htmlentities($message['message']);
 
 
 if(!$mail->send()) {
-    $output['success'] = false;
-    $output['message'][] = $mail->ErrorInfo;
+    // $output['success'] = false;
+    // $output['message'][] = $mail->ErrorInfo;
     // echo 'Message could not be sent.';
     // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    $result = array(
+        "message"    => "Sorry, something is wrong.",
+        "sendstatus" => 0
+    );
+
+    echo json_encode($result);
 } else {
     // $output['success'] = true;
-    echo 'Message has been sent. Thank you!';
+    // echo 'Message has been sent. Thank you!';
+    $result = array(
+        "message"    => "Message has been sent. Thank you!",
+        "sendstatus" => 1
+    );
+
+    echo json_encode($result);
 }
 // echo json_encode($output);
 ?>
