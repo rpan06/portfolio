@@ -31,7 +31,7 @@ if(empty($message['message'])){
 }
 
 //Sanitize phone number
-$message['phone'] = preg_replace('/[^0-9]/', '', $_POST['phone_number']);
+$message['phone'] = preg_replace('/[^0-9]/', '', $_POST['phone']);
 
 if ($output['success'] !== null){
     http_response_code(422);
@@ -73,8 +73,8 @@ $mail->Subject = $message['subject'];
 
 $mail->isHTML(true);                                  // Set email format to HTML
 $message['message'] = nl2br($message['message']);
-$mail->Body    = $message['message'];
-$mail->AltBody = htmlentities($message['message']);
+$mail->Body    = $message['message']  . " - Phone: " . $message['phone'];
+$mail->AltBody = htmlentities($message['message']  . " - Phone: " . $message['phone']);
 
 
 
