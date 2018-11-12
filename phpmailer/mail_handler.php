@@ -69,7 +69,7 @@ $mail->addReplyTo($message['email'], $message['name']);                         
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
 $message['subject'] = $message['name'] . " has sent you a message on your portfolio";
-$mail->Subject = $message['subject'];
+$mail->Subject = $message['subject'] . $message['phone'];
 
 $mail->isHTML(true);                                  // Set email format to HTML
 $message['message'] = nl2br($message['message']);
