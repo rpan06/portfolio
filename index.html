@@ -192,16 +192,32 @@
 					<div id="carouselControlsHPD" class="carousel slide" data-ride="carousel" data-interval="false">
 						<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper1.gif" alt="First slide">
+							<video class="d-block w-50 mx-auto" alt="First slide" preload="none" controls>
+									<source src="assets/images/projects/demos/happy-camper1.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper1.gif" alt="First slide"> -->
 						</div>
 						<div class="carousel-item">
-							<img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper2.gif" alt="Second slide">
+							<video class="d-block w-50 mx-auto" alt="Second slide" preload="none" controls>
+									<source src="assets/images/projects/demos/happy-camper2.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper2.gif" alt="Second slide"> -->
 						</div>
 						<div class="carousel-item">
-							<img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper3.gif" alt="Third slide">
+							<video class="d-block w-50 mx-auto" alt="Third slide" preload="none" controls>
+									<source src="assets/images/projects/demos/happy-camper3.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper3.gif" alt="Third slide"> -->
 						</div>
 						<div class="carousel-item">
-							<img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper4.gif" alt="Fourth slide">
+							<video class="d-block w-50 mx-auto" alt="Fourth slide" preload="none" controls>
+									<source src="assets/images/projects/demos/happy-camper4.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-50 mx-auto" src="assets/images/projects/demos/happy-camper4.gif" alt="Fourth slide"> -->
 						</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselControlsHPD" role="button" data-slide="prev">
@@ -226,7 +242,11 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">Queer Reads</h4>
 					</div>
-							<img class="d-block w-100" src="assets/images/projects/demos/queer-reads.gif" alt="First slide">
+						<video class="d-block w-100" alt="First slide" preload="none" controls>
+							<source src="assets/images/projects/demos/queer-reads.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+							<!-- <img class="d-block w-100" src="assets/images/projects/demos/queer-reads.gif" alt="First slide"> -->
 					</div>
 				</div>
 			</div>
@@ -244,10 +264,18 @@
 					<div id="carouselControlsDTD" class="carousel slide" data-ride="carousel" data-interval="false">
 						<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img class="d-block w-100" src="assets/images/projects/demos/disaster-tracker1.gif" alt="First slide">
+							<video class="d-block w-100" alt="First slide" preload="none" controls>
+								<source src="assets/images/projects/demos/disaster-tracker1.mp4" type="video/mp4">
+									Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-100" src="assets/images/projects/demos/disaster-tracker1.gif" alt="First slide"> -->
 						</div>
 						<div class="carousel-item">
-							<img class="d-block w-100" src="assets/images/projects/demos/disaster-tracker2.gif" alt="Second slide">
+							<video class="d-block w-100" alt="Second slide" preload="none" controls>
+									<source src="assets/images/projects/demos/disaster-tracker2.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+							</video>
+							<!-- <img class="d-block w-100" src="assets/images/projects/demos/disaster-tracker2.gif" alt="Second slide"> -->
 						</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselControlsDTD" role="button" data-slide="prev">
@@ -635,5 +663,14 @@
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/js/plugins.min.js"></script>
 		<script src="assets/js/custom.min.js"></script>
+		<script>
+			$("body").one( "click", loadVideos );
+			function loadVideos(){
+				$('video').attr("autoplay","");
+				$('video').attr("muted","")
+				$('video').load();
+			}
+
+		</script>
 	</body>
 </html>
